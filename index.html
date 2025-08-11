@@ -3,22 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- --------- UNICONS ---------- -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-
-    <!-- --------- CSS ---------- -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- --------- FAVICON ---------- -->
     <link rel="shortcut icon" href="images/ia.jpg" type="image/x-icon">
-
     <title>Portfolio | Euler</title>
 </head>
 <body>
    <div class="container">
-    <!-- --------------- HEADER --------------- -->
-      <nav id="header">
+    <nav id="header">
         <div class="nav-logo">
             <p class="nav-name">Euler</p>
             <span>.</span>
@@ -44,32 +36,30 @@
             </ul>
         </div>
         <div class="nav-button">
-            <button class="btn"><a href="cv_Canadien_Web.pdf">Download CV <i class="uil uil-file-alt"></i></a></button>
+            <a href="cv_Canadien_Web.pdf" class="btn">Download CV <i class="uil uil-file-alt"></i></a>
+        </div>
+        <div class="theme-toggle">
+            <i class="uil uil-moon"></i>
         </div>
         <div class="nav-menu-btn">
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
-      </nav>
-
-
-    <!-- -------------- MAIN ---------------- -->
+    </nav>
     <main class="wrapper">
-       <!-- -------------- FEATURED BOX ---------------- -->
        <section class="featured-box" id="home">
           <div class="featured-text">
             <div class="featured-text-card">
                 <span>Euler Gerry</span>
             </div>
             <div class="featured-name">
-                <p>Je suis <span class="typedText"></span></p>   
+                <p>Je suis <span class="typedText"></span></p>
             </div>
             <div class="featured-text-info">
-                <p>Développeur backend chevronné et passionné par le codage informatique et l'intelligence artificielle.
-                </p>
+                <p>Développeur backend chevronné et passionné par le codage informatique et l'intelligence artificielle.</p>
             </div>
             <div class="featured-text-btn">
                 <button class="btn blue-btn">Engagez moi</button>
-                <button class="btn"> <a href="cv_Canadien_Web.pdf">Download CV <i class="uil uil-file-alt"></i></a></button>
+                <button class="btn"><a href="cv_Canadien_Web.pdf">Download CV <i class="uil uil-file-alt"></i></a></button>
             </div>
             <div class="social_icons">
                 <div class="icon"><i class="uil uil-instagram"></i></div>
@@ -89,9 +79,7 @@
                 <p>Scroll Down</p>
             </a>
           </div>
-
        </section>
-       <!-- -------------- ABOUT BOX ---------------- -->
        <section class="section" id="about">
           <div class="top-header">
             <h1>A Propos</h1>
@@ -99,15 +87,10 @@
           <div class="row">
             <div class="col">
                 <div class="about-info">
-                    <h3> Introduction</h3>
-                    <p>
-                        Je suis spécialisé en PHP, Java et Python, avec une solide maîtrise des frameworks et bibliothèques contemporains.
-                         Cette compétence me permet de prendre en charge efficacement les aspects métier et fonctionnels des sites. 
-                         J'ai une expérience approfondie dans
-                        la conception et l'implémentation de code, ce qui me permet de développer des solutions robustes et bien structurées.
-                    </p>
+                    <h3>Introduction</h3>
+                    <p>Je suis spécialisé en PHP, Java et Python, avec une solide maîtrise des frameworks et bibliothèques contemporains. Cette compétence me permet de prendre en charge efficacement les aspects métier et fonctionnels des sites. J'ai une expérience approfondie dans la conception et l'implémentation de code, ce qui me permet de développer des solutions robustes et bien structurées.</p>
                     <div class="about-btn">
-                        <button class="btn"> <a href="cv_Canadien_Web.pdf">Download CV <i class="uil uil-import"></i></a></button>
+                        <button class="btn"><a href="projects-details.html">Détails <i class="uil uil-ellipsis-h"></i></a></button>
                     </div>
                 </div>
             </div>
@@ -133,7 +116,6 @@
                         <span>PHP</span>
                         <span>JAVA</span>
                         <span>Python</span>
-                    
                     </div>
                 </div>
                 <div class="skills-box">
@@ -148,49 +130,43 @@
             </div>
           </div>
        </section>
-
-       <!-- -------------- PROJECT BOX ---------------- -->
-
        <section class="section" id="projects">
           <div class="top-header">
               <h1>Projects</h1>
           </div>
           <div class="project-container">
             <div class="project-box">
-                <a href="">
+                <a href="projects-details.html">
                     <i class="uil uil-briefcase-alt"></i>
                     <h3>Completed</h3>
                     <label>15+ Finished Projects</label>
                 </a>
-               
             </div>
-      
             <div class="project-box">
                 <i class="uil uil-users-alt"></i>
                 <h3>Clients</h3>
                 <label>25+ Happy Clients</label>
             </div>
             <div class="project-box">
-                <i class="uil uil-award"></i>
-                <h3>Experience</h3>
-                <label>7+ Years in the field</label>
+                <a href="experience.html">
+                    <i class="uil uil-award"></i>
+                    <h3>Experience</h3>
+                    <label>7+ Years in the field</label>
+                </a>
             </div>
           </div>
        </section>
-
-       <!-- -------------- CONTACT BOX ---------------- -->
-
        <section class="section" id="contact">
           <div class="top-header">
-            <h1>Get in touch</h1>
-            <span>Do you have a project in your mind, contact me here</span>
+            <h1>Entrez En contact</h1>
+            <span>Avez-vous un Projet ? Contactez moi </span>
           </div>
           <div class="row">
              <div class="col">
                 <div class="contact-info">
-                    <h2>Find Me <i class="uil uil-corner-right-down"></i></h2>
-                    <p><i class="uil uil-envelope"></i> Email: john@doe.com</p>
-                    <p><i class="uil uil-phone"></i> Tel: +250 708 770 000</p>
+                    <h2>Trouvez Moi <i class="uil uil-corner-right-down"></i></h2>
+                    <p><i class="uil uil-envelope"></i> Email: euler.codinpro@gmail.com</p>
+                    <p><i class="uil uil-phone"></i> Tel: +212 06 82 94 33 99</p>
                 </div>
              </div>
              <div class="col">
@@ -209,14 +185,10 @@
              </div>
           </div>
        </section>
-
     </main>
-
-
-    <!-- --------------- FOOTER --------------- -->
     <footer>
         <div class="top-footer">
-            <p>John Doe .</p>
+            <p>Euler Gerry .</p>
         </div>
         <div class="middle-footer">
             <ul class="footer-menu">
@@ -241,22 +213,12 @@
             <div class="icon"><i class="uil uil-github-alt"></i></div>
         </div>
         <div class="bottom-footer">
-            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">John Doe</a> - All rights reserved</p>
+            <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Euler Gerry</a> - All rights reserved</p>
         </div>
     </footer>
-
     </div>
-
-
-
-
-    <!-- ----- TYPING JS Link ----- -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-       <!-- ----- SCROLL REVEAL JS Link----- -->
     <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!-- ----- MAIN JS ----- -->
     <script src="js/main.js"></script>
 </body>
 </html>
