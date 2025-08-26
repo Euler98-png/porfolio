@@ -50,21 +50,69 @@
                 <div class="top-header">
                     <h1>Projets Détaillés</h1>
                 </div>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Projet 1: Application Web</h3>
-                        <p>Une application web dynamique construite avec Laravel et React, offrant une expérience utilisateur fluide.</p>
-                        <a href="project-report-1.pdf" class="btn">Voir le Rapport <i class="uil uil-file-alt"></i></a>
+                <div class="project-list">
+                    <div class="project-item">
+                        <h3>Projet 1: Application Web Dynamique</h3>
+                        <p>Une application web construite avec Laravel et React, offrant une expérience utilisateur fluide et des fonctionnalités avancées.</p>
+                        <button class="btn project-detail-btn" onclick="toggleDetails(this)">Détails <i class="uil uil-angle-down"></i></button>
+                        <div class="project-detail">
+                            <div class="detail-section">
+                                <h4>Avant de commencer</h4>
+                                <p>Veuillez vérifier :</p>
+                                <ul>
+                                    <li>Les identifiants de votre commande.</li>
+                                    <li>Le numéro de votre commande.</li>
+                                </ul>
+                                <p><strong>Temps estimé :</strong> 2 minutes | <strong>Étapes :</strong> 3</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>Annuler ma commande</h4>
+                                <p><strong>À savoir :</strong> Dans le cadre d'une souscription effectuée par téléphone ou sur internet, vous bénéficiez d'un délai légal de rétractation de 14 jours calendaires, à compter de la réception de votre mobile et de la carte SIM ou de la confirmation de commande.</p>
+                                <p>Consultez les <a href="#">Conditions Générales de Vente</a>.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-item">
                         <h3>Projet 2: API RESTful</h3>
-                        <p>Une API RESTful développée en Spring Boot pour gérer les données d'une plateforme e-commerce.</p>
-                        <a href="project-report-2.pdf" class="btn">Voir le Rapport <i class="uil uil-file-alt"></i></a>
+                        <p>Une API RESTful développée en Spring Boot pour gérer les données d'une plateforme e-commerce, optimisée pour la scalabilité.</p>
+                        <button class="btn project-detail-btn" onclick="toggleDetails(this)">Détails <i class="uil uil-angle-down"></i></button>
+                        <div class="project-detail">
+                            <div class="detail-section">
+                                <h4>Avant de commencer</h4>
+                                <p>Veuillez vérifier :</p>
+                                <ul>
+                                    <li>Les identifiants de votre commande.</li>
+                                    <li>Le numéro de votre commande.</li>
+                                </ul>
+                                <p><strong>Temps estimé :</strong> 2 minutes | <strong>Étapes :</strong> 3</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>Annuler ma commande</h4>
+                                <p><strong>À savoir :</strong> Dans le cadre d'une souscription effectuée par téléphone ou sur internet, vous bénéficiez d'un délai légal de rétractation de 14 jours calendaires, à compter de la réception de votre mobile et de la carte SIM ou de la confirmation de commande.</p>
+                                <p>Consultez les <a href="#">Conditions Générales de Vente</a>.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-item">
                         <h3>Projet 3: Analyse de Données</h3>
-                        <p>Un projet d'analyse de données utilisant Python et Pandas pour visualiser des tendances commerciales.</p>
-                        <a href="project-report-3.pdf" class="btn">Voir le Rapport <i class="uil uil-file-alt"></i></a>
+                        <p>Un projet d'analyse de données avec Python et Pandas pour visualiser des tendances commerciales et fournir des insights.</p>
+                        <button class="btn project-detail-btn" onclick="toggleDetails(this)">Détails <i class="uil uil-angle-down"></i></button>
+                        <div class="project-detail">
+                            <div class="detail-section">
+                                <h4>Avant de commencer</h4>
+                                <p>Veuillez vérifier :</p>
+                                <ul>
+                                    <li>Les identifiants de votre commande.</li>
+                                    <li>Le numéro de votre commande.</li>
+                                </ul>
+                                <p><strong>Temps estimé :</strong> 2 minutes | <strong>Étapes :</strong> 3</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>Annuler ma commande</h4>
+                                <p><strong>À savoir :</strong> Dans le cadre d'une souscription effectuée par téléphone ou sur internet, vous bénéficiez d'un délai légal de rétractation de 14 jours calendaires, à compter de la réception de votre mobile et de la carte SIM ou de la confirmation de commande.</p>
+                                <p>Consultez les <a href="#">Conditions Générales de Vente</a>.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -94,5 +142,13 @@
     </div>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/main.js"></script>
+    <script>
+        function toggleDetails(button) {
+            const detail = button.nextElementSibling;
+            detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+            button.querySelector('i').classList.toggle('uil-angle-down');
+            button.querySelector('i').classList.toggle('uil-angle-up');
+        }
+    </script>
 </body>
 </html>
