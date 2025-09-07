@@ -52,23 +52,88 @@
                 </div>
                 <div class="project-list">
                     <div class="project-item">
-                        <h3>Projet 1: Application Web Dynamique</h3>
-                        <p>Une application web construite avec Laravel et React, offrant une expérience utilisateur fluide et des fonctionnalités avancées.</p>
+                        <h3>Application de Messagerie instantanée chat</h3>
+                        <p>Une application web de messagerie instantanée permettant aux utilisateurs d’échanger des messages, des images, des vidéos et des fichiers, utilisant PHP, MySQL, HTML, CSS et JavaScript.</p>
                         <button class="btn project-detail-btn" onclick="toggleDetails(this)">Détails <i class="uil uil-angle-down"></i></button>
                         <div class="project-detail">
                             <div class="detail-section">
-                                <h4>Avant de commencer</h4>
-                                <p>Veuillez vérifier :</p>
-                                <ul>
-                                    <li>Les identifiants de votre commande.</li>
-                                    <li>Le numéro de votre commande.</li>
-                                </ul>
-                                <p><strong>Temps estimé :</strong> 2 minutes | <strong>Étapes :</strong> 3</p>
+                                <h4>1. Présentation Générale</h4>
+                                <p>ChatApp est une application web de messagerie instantanée permettant aux utilisateurs d’échanger des messages, des images, des vidéos et des fichiers. Elle utilise PHP côté serveur, MySQL pour la base de données, et des technologies front-end classiques (HTML, CSS, JavaScript).</p>
                             </div>
                             <div class="detail-section">
-                                <h4>Annuler ma commande</h4>
-                                <p><strong>À savoir :</strong> Dans le cadre d'une souscription effectuée par téléphone ou sur internet, vous bénéficiez d'un délai légal de rétractation de 14 jours calendaires, à compter de la réception de votre mobile et de la carte SIM ou de la confirmation de commande.</p>
-                                <p>Consultez les <a href="#">Conditions Générales de Vente</a>.</p>
+                                <h4> 2. Fonctionnalités Principales</h4>
+                                <ul>
+                                    <li> <p>Authentification des utilisateurs (inscription, connexion, gestion de session)</p></li>
+                                    <li><p>Envoi et réception de messages (texte, images, vidéos, fichiers)</p></li>
+                                    <li><p>Affichage dynamique des conversations (mise à jour en temps réel via AJAX)</p> </li>
+                                    <li><p>Gestion des utilisateurs (avatars, informations de profil)</p> </li>
+                                    <li><p>Sécurité (protection contre les injections SQL, gestion des sessions)</p></li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>3. Structure des fichiers</h4>
+                                <p>Le système d’exploitation sur lequel j’ai travaillé pour la réalisation de l’application est la distribution d' Ubuntu version 22.04 . Mais vous pouvez le réaliser aussi en utilisant le système d’exploitation Windows.</p>
+                                <p>Voici la structure du dossier</p>
+                                <img src="images/structure_vscode.png" alt="Structure du dossier ChatApp" style="max-width: 100%; height: auto; margin-top: 10px;">
+                                <p>Le serveur local utilisé est le serveur Xampp que vous pouvez télécharger en cliquant sur le lien : <a href="https://www.apachefriends.org/" target="_blank">https://www.apachefriends.org/</a>. Une fois téléchargé et installé, créez le dossier chatapp dans le dossier htdocs de Xampp. Tous les fichiers concernant l'implémentation de l’application se trouvent dans Xampp.</p>
+                                <p>Vous aurez un dossier php qui contient tous les fichiers .php et un dossier javascript qui contient tous les fichier script et les restes des fichiers sont directement dans le dossier chatapp tels que : index.php , chat.php, header.php, login.php</p>
+                                <p>Détaillé de certaines fichiers importants</p>
+                                <ul>
+                                    <li><p>config.php : Configuration de la connexion à la base de données.</p></li>
+                                    <li><p>get-chat.php : Récupération et affichage des messages d’une conversation.</p></li>
+                                    <li><p>login.php & signup.php : Gestion de l’authentification.</p></li>
+                                    <li><p>/php/insert-chat.php : Permet d'insérer les messages dans la base de données.</p></li>
+                                    <li><p>images : Stockage des avatars utilisateurs. <img src="images/chatapp_structure.png" alt="Structure du dossier ChatApp" style="max-width: 100%; height: auto; margin-top: 10px;"></p></li>
+                                    <li><p>/uploads/ : Stockage des fichiers et médias envoyés.</p></li>
+                                    <li><p>/js/ : Scripts JavaScript pour l’interface dynamique.</p></li>
+                                    <li><p>/css/ : Feuilles de style pour l’interface utilisateur.</p></li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>4. Détail du fichier get-chat.php</h4>
+                                <p>Ce fichier est responsable de l’affichage des messages entre deux utilisateurs :</p>
+                                <ul>
+                                    <li>Vérification de la session : S’assure que l’utilisateur est connecté.</li>
+                                    <li>Requête SQL : Sélectionne tous les messages échangés entre deux utilisateurs, triés par ordre croissant.</li>
+                                    <li>Gestion des types de messages :</li>
+                                    <ul>
+                                        <li>Texte : Affiché dans un paragraphe.</li>
+                                        <li>Image : Affiché via une balise &lt;img&gt;. <img src="" alt="Exemple d'image dans ChatApp" style="max-width: 100%; height: auto; margin-top: 10px;"></li>
+                                        <li>Vidéo : Affiché via une balise &lt;video&gt;. <img src="" alt="Exemple de vidéo dans ChatApp" style="max-width: 100%; height: auto; margin-top: 10px;"></li>
+                                        <li>Fichier : Lien de téléchargement.</li>
+                                    </ul>
+                                    <li>Affichage conditionnel :</li>
+                                    <ul>
+                                        <li>Messages envoyés : Alignés à droite.</li>
+                                        <li>Messages reçus : Alignés à gauche avec avatar de l’expéditeur. <img src="" alt="Disposition des messages dans ChatApp" style="max-width: 100%; height: auto; margin-top: 10px;"></li>
+                                    </ul>
+                                    <li>Sécurité : Utilisation de htmlspecialchars pour éviter les failles XSS.</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>5. Base de données</h4>
+                                <p>Table users : Stocke les informations des utilisateurs (id, nom, avatar, etc.).</p>
+                                <p>Table messages : Stocke chaque message (id, content, type, chemin du fichier, id expéditeur, id destinataire, date).</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>6. Sécurité</h4>
+                                <p>Sessions : Utilisation de $_SESSION pour l’authentification.</p>
+                                <p>Échappement des données : Utilisation de mysqli_real_escape_string et htmlspecialchars.</p>
+                                <p>Gestion des fichiers : Contrôle du type et de la taille des fichiers envoyés</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>7. Points d’amélioration possibles</h4>
+                                <ul>
+                                    <li>Ajout de la gestion des groupes.</li>
+                                    <li>Notifications en temps réel (WebSocket).</li>
+                                    <li>Chiffrement des messages.</li>
+                                    <li>Interface responsive.</li>
+                                </ul>
+                            </div>
+                            <div class="detail-section">
+                                <h4>8. Conclusion</h4>
+                                <p>Ce projet offre une base solide pour une application de chat moderne, avec gestion des médias et sécurité de base. Il peut être enrichi selon les besoins (groupes, notifications, etc.).</p>
+                                <p>Vous allez le projet sur mon compte github et apporter votre modification <a href="https://github.com/Euler98-png/tchatapp" target="_blank">https://github.com/Euler98-png/tchatapp</a></p>
                             </div>
                         </div>
                     </div>
@@ -141,14 +206,33 @@
         </footer>
     </div>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
     <script>
-        function toggleDetails(button) {
+        // Function to toggle details
+       function toggleDetails(button) {
+            console.log("Toggle button clicked"); // Debug log
             const detail = button.nextElementSibling;
-            detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
-            button.querySelector('i').classList.toggle('uil-angle-down');
-            button.querySelector('i').classList.toggle('uil-angle-up');
+            const icon = button.querySelector('i');
+
+            if (detail && detail.classList.contains('project-detail')) {
+                console.log("Detail element found:", detail); // Debug log
+                console.log("Current maxHeight:", detail.style.maxHeight); // Debug log
+                if (detail.style.maxHeight && detail.style.maxHeight !== '0px') {
+                    detail.style.maxHeight = '0px'; // Masquer explicitement à '0px'
+                    icon.classList.remove('uil-angle-up');
+                    icon.classList.add('uil-angle-down');
+                } else {
+                    detail.style.maxHeight = detail.scrollHeight + 'px'; // Étendre à la hauteur complète
+                    icon.classList.remove('uil-angle-down');
+                    icon.classList.add('uil-angle-up');
+                }
+            } else {
+                console.log("No valid detail element found"); // Debug log
+            }
         }
+
+        // Initialize on DOM load
+       
     </script>
 </body>
 </html>
