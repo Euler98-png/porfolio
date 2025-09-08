@@ -10,41 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <nav id="header">
-            <div class="nav-logo">
-                <p class="nav-name">Euler</p>
-                <span>.</span>
-            </div>
-            <div class="nav-menu" id="myNavMenu">
-                <ul class="nav_menu_list">
-                    <li class="nav_list">
-                        <a href="index.html#home" class="nav-link">Accueil</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="index.html#about" class="nav-link active-link">A Propos</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="index.html#projects" class="nav-link">Mes Projets</a>
-                        <div class="circle"></div>
-                    </li>
-                    <li class="nav_list">
-                        <a href="index.html#contact" class="nav-link">Contact</a>
-                        <div class="circle"></div>
-                    </li>
-                </ul>
-            </div>
-            <div class="nav-button">
-                <a href="cv_Canadien_Web.pdf" class="btn">Download CV <i class="uil uil-file-alt"></i></a>
-            </div>
-            <div class="theme-toggle">
-                <i class="uil uil-moon"></i>
-            </div>
-            <div class="nav-menu-btn">
-                <i class="uil uil-bars" onclick="myMenuFunction()"></i>
-            </div>
-        </nav>
+        <div id="header-placeholder"></div>
         <main class="wrapper">
             <section class="section" id="project-details">
                 <div class="top-header">
@@ -182,32 +148,50 @@
                 </div>
             </section>
         </main>
-        <footer>
-            <div class="top-footer">
-                <p>Euler Gerry .</p>
-            </div>
-            <div class="middle-footer">
-                <ul class="footer-menu">
-                    <li class="footer_menu_list"><a href="index.html#home">Home</a></li>
-                    <li class="footer_menu_list"><a href="index.html#about">About</a></li>
-                    <li class="footer_menu_list"><a href="index.html#projects">Projects</a></li>
-                    <li class="footer_menu_list"><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-social-icons">
-                <div class="icon"><i class="uil uil-instagram"></i></div>
-                <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-                <div class="icon"><i class="uil uil-dribbble"></i></div>
-                <div class="icon"><i class="uil uil-github-alt"></i></div>
-            </div>
-            <div class="bottom-footer">
-                <p>Copyright &copy; <a href="index.html#home" style="text-decoration: none;">Euler Gerry</a> - All rights reserved</p>
-            </div>
-        </footer>
+        <div id="footer-placeholder"></div>
+        
     </div>
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- <script src="js/main.js"></script> -->
     <script>
+
+        // Fonction pour charger dynamiquement le header et le footer
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Erreur du chargement du header', error)   )
+                ;
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                })
+                .catch(error => console.error('Erreur du chargement du footer', error))
+                ;
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // Function to toggle details
        function toggleDetails(button) {
             console.log("Toggle button clicked"); // Debug log
